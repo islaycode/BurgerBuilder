@@ -1,9 +1,10 @@
 import React from 'react'
-import './Burger.css'
+import './Burger.css';
+
 import BurgerIngredient from './BurgerIngredients/BurgerIngredient'
 
 export const Burger = (props) => {
-    
+    console.log(props);
     let transformIngredients = Object.keys(props.ingredients)
         .map(igKey => {
             return[...Array(props.ingredients[igKey])].map((_,i)=>{
@@ -16,7 +17,7 @@ export const Burger = (props) => {
         console.log(transformIngredients);
        
         if(transformIngredients.length === 0) {
-            transformIngredients = <p>Start Building Your Bugrer Now!</p>
+            transformIngredients = <p>Start Building Your Burger Now!</p>
         }
         return (
         <div className="Burger">
